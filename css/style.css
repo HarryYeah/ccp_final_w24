@@ -333,32 +333,26 @@ header a:hover{
     grid-row: 2 / 3;
 }
 
-/* Animation */
 
-.nav-left{
-    transition: transform 0.5s ease, filter 0.5s ease; 
-    filter: brightness(100%) saturation(100%) contrast(100%);
+.nav-left {
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.nav-left:hover{
-    filter: brightness(120%) saturation(120%) contrast(120%);
-    transform: scale(1.05);
-    animation: move1 0.5s forwards; 
+.nav-left:hover {
+    animation: pulse 1.5s infinite;
+}
 
-@keyframes move1{
-    0%{
-        filter: brightness(100%) saturation(100%) contrast(100%); 
-        transform: scale(1);
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+        filter: brightness(100%) saturation(100%) contrast(100%);
     }
-    50%{
-        filter: brightness(110%) saturation(110%) contrast(110%); 
-        transform: scale(1.025);
-    }
-    100%{
-        filter: brightness(120%) saturation(120%) contrast(120%); 
-        transform: scale(1.05);
+    50% {
+        transform: scale(1.05); /* Slightly larger */
+        filter: brightness(120%) saturation(120%) contrast(120%);
     }
 }
+
 
 
 /* Media query */
