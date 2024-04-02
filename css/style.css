@@ -334,20 +334,33 @@ header a:hover{
 }
 
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text li {
+  transition: transform 0.3s ease;
+}
+
+.text li:hover {
+  animation: pulse 1s infinite;
+}
 
 
 
 /* Media query */
 
 @media (prefers-reduced-motion: reduce) {
-    .nav-left > h1 {
-        animation: none; 
-        transition: none; 
-    }
-
-    .nav-left > h1:hover {
-        filter: none;
-        transform: none;
+    *{
+        animation: none;
     }
 }
 
